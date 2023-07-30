@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1690706909057,"sparkVersion":"3.4.1","uid":"VectorAssembler_effe1e96547b","paramMap":{"outputCol":"continuous","inputCols":["rating","calories_i","protein_i","fat_i","sodium_i"]},"defaultParamMap":{"outputCol":"VectorAssembler_effe1e96547b__output","handleInvalid":"error"}}
