@@ -1,5 +1,5 @@
 # Dessert or Not?
-A PySpark ML pipeline for solving the classification problem: based on a dish's name, can we tell if it's a dessert?
+A PySpark ML pipeline for working out which attributes of an Epicurious recipe are important in determining whether or not it is a dessert.
 
 Uses the [Epicurious - Recipes with Rating and Nutrition](https://www.kaggle.com/datasets/hugodarwood/epirecipes) Kaggle dataset, originally scraped from http://www.epicurious.com/recipes-menus.
 
