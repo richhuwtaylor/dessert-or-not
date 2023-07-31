@@ -14,6 +14,8 @@ The dataset consists of over 20,000 recipes. Each row holds the following:
 - sodium (mg)
 - a set of binary attributes, for example the presence of a hashtag (e.g `#cakeweek`) an ingredient (e.g. `almond`) or a cooking technique (e.g. `bake`)
 
+There's a class imbalance of about 4:1 between non-desserts and desserts, but since this isn't severe, we don't take any particular steps to address it.
+
 ### Data cleaning and feature engineering steps taken:
 
 #### Data cleaning
@@ -33,6 +35,35 @@ The dataset consists of over 20,000 recipes. Each row holds the following:
 #### Feature engineering
 
 - Create ratio features (proprortions of calories made up by each macronutrient)
+
+### Model evaluation and optimisation
+
+#### Precision, recall and accuracy
+
+Training and evaluating the model on the entire dataset in a 70:30 train:test split yields the following:
+
+|           |        |
+|-----------|--------|
+| Precision | 91.24% |
+| Recall    | 92.20% |
+| Accuracy  | 99.32% |
+
+where our accuracy measure is the area under the ROC curve:
+
+<img src="./images/roc-curve.png" alt="ROC curve">
+
+#### Optimising the elastic net mixing parameter
+We compare the performance of Lasso regression (L1 regularisation) and Ridge regression (L2 regularisation) by trying values of the elastic net mixing parameter of:
+- `α = 0`: Pure L2 regularization (Ridge regression)
+- `α = 1`: Pure L1 regularization (Lasso regression).
+
+We perform 3-fold cross validation for each value of the parameter, finding that `α = 0`, i.e. Pure L2 regularization (Ridge regression) gives us the largest areaUnderROC (accuracy) by a thin margin. 
+
+#### Explainability: which coefficients are the biggest drivers?
+
+Terms with coefficients close to zero like `blender`, `quince` and `cinnamon` are not very predictive of whether or not a recipe is a dessert, whereas terms like `cauliflower`, `horseradish` and `coffeegrinder` are highly predictive. 
+
+Of our macronutrient-based features, `protein_ratio` is the most influential.
 
 ### The final pipeline
 The final version of this project's ML pipeline uses a `pyspark.ml` `Pipeline` consisting of the following stages to prepare the data for logistic regression:
