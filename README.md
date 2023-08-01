@@ -1,5 +1,5 @@
 # Dessert or Not?
-A PySpark ML pipeline for working out which attributes of an Epicurious recipe are important in determining whether or not it is a dessert.
+A PySpark data preparation and logistic regression pipeline for working out which attributes of an Epicurious recipe are important in determining whether or not it is a dessert (without looking at the name of the dish!)
 
 Uses the [Epicurious - Recipes with Rating and Nutrition](https://www.kaggle.com/datasets/hugodarwood/epirecipes) Kaggle dataset, originally scraped from http://www.epicurious.com/recipes-menus.
 
@@ -53,7 +53,7 @@ where our accuracy measure is the area under the ROC curve:
 <img src="./images/roc-curve.png" alt="ROC curve">
 
 #### Optimising the elastic net mixing parameter
-We compare the performance of Lasso regression (L1 regularisation) and Ridge regression (L2 regularisation) by trying values of the elastic net mixing parameter of:
+We compare the performance of Lasso regression (L1 regularization) and Ridge regression (L2 regularization) by trying values of the elastic net mixing parameter of:
 - `α = 0`: Pure L2 regularization (Ridge regression)
 - `α = 1`: Pure L1 regularization (Lasso regression).
 

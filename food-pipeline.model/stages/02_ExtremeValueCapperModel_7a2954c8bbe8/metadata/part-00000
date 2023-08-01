@@ -1,0 +1,1 @@
+{"class":"__main__.ExtremeValueCapperModel","timestamp":1690868610154,"sparkVersion":"3.4.1","uid":"ExtremeValueCapperModel_7a2954c8bbe8","paramMap":{"inputCol":"protein","outputCol":"protein","cap":78.68435370787552,"floor":-38.00770156553709},"defaultParamMap":{"outputCol":"ExtremeValueCapperModel_7a2954c8bbe8__output","boundary":0.0}}
