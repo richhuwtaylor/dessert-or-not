@@ -3,6 +3,8 @@ A PySpark data preparation and logistic regression pipeline for working out whic
 
 Uses the [Epicurious - Recipes with Rating and Nutrition](https://www.kaggle.com/datasets/hugodarwood/epirecipes) Kaggle dataset, originally scraped from http://www.epicurious.com/recipes-menus.
 
+The `pyspark.ml` Pipeline implemented uses custom-made Transformers and Estimators for missing value imputation and outlier capping.
+
 ### About the data
 
 The dataset consists of over 20,000 recipes. Each row holds the following:
